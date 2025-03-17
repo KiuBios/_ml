@@ -8,13 +8,11 @@ learning_rate = 0.1
 num_epochs = 100
 
 for epoch in range(num_epochs):
-    # 計算損失函數
+
     loss = x**2 + y**2 + z**2 - 2*x - 4*y - 6*z + 8
 
-    # 反向傳播計算梯度
     loss.backward()
 
-    # 梯度下降更新變數
     x.data -= learning_rate * x.grad
     y.data -= learning_rate * y.grad
     z.data -= learning_rate * z.grad
